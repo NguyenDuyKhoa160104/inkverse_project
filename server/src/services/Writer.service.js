@@ -3,7 +3,7 @@ import { WRITER_ISACTIVE } from "../constants/Writer.constant.js";
 
 export const getProfileService = async (writerId) => {
     try {
-        const writer = await Writer.findById(writerId).select("-password");
+        const writer = await Writer.findOne({_id: writerId}).select("-password");
         if (!writer) {
             return { error: "Tác giả không tồn tại." };
         }

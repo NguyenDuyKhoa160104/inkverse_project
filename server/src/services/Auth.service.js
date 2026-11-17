@@ -99,3 +99,95 @@ export const loginWriterService = async (email, password) => {
         return { error: "Lỗi hệ thống" };
     }
 }
+
+export const writerRegisterService = async (penName, email, password) => {
+    try {
+        const existingWriter = await Writer.findOne({
+            $or: [
+                { penName: penName },
+                { email: email }
+            ]
+        });
+
+        if (existingWriter) {
+            if (existingWriter.email === email) {
+                return { error: "Email đã được đăng ký" };
+            }
+
+            if (existingWriter.penName === penName) {
+                return { error: "Bút danh đã tồn tại" };
+            }
+        }
+
+        const newWriter = await Writer.create({
+            penName: penName,
+            email: email,
+            password: password
+        });
+
+        const writerData = newWriter.toObject();
+        delete writerData.password;
+
+        return {
+            message: "Đã đăng ký thành công tác giả!",
+            writerData
+        }
+    }
+    catch (error) {
+        console.log("Error in writerRegisterService:", error);
+        if (error.name === "ValidationError") {
+            const messages = Object.values(error.errors).map(
+                item => item.message
+            );
+
+            return { error: messages.join(", ") };
+        }
+
+        if (error.code === 11000) {
+            return { error: "Email đã được đăng ký" };
+        }
+
+        return { error: "Lỗi hệ thống" };
+    }
+}
+
+export const readerRegisterService = async (fullName, email, password) => {
+    try {
+        const existingReader = await Reader.findOne({ email: email },
+        )
+
+        if (existingReader) {
+            return { error: "Email đã được đăng ký" };
+        }
+
+        const newReader = await Reader.create({
+            fullName: fullName,
+            email: email,
+            password: password
+        })
+
+        const readerData = newReader.toObject();
+        delete readerData.password
+
+        return {
+            message: "Đã đăng ký tài khoản độc giả thành công!",
+            readerData
+        }
+    }
+    catch (error) {
+        console.log("Error in readerRegisterService:", error);
+        if (error.name === "ValidationError") {
+            const messages = Object.values(error.errors).map(
+                item => item.message
+            );
+
+            return { error: messages.join(", ") };
+        }
+
+        if (error.code === 11000) {
+            return { error: "Email đã được đăng ký" };
+        }
+
+        return { error: "Lỗi hệ thống" };
+    }
+}

@@ -60,3 +60,41 @@ export const writerLogin = async (req, res) => {
         return res.status(500).json({ message: "Lỗi hệ thống" });
     }
 }
+
+export const writerRegister = async (req, res) => {
+    try {
+        const { penName, email, password } = req.body;
+        const result = await AuthService.writerRegisterService(penName, email, password);
+        if (result.error) {
+            return res.status(401).json({
+                message: result.error
+            });
+        }
+        res.status(200).json({
+            ...result
+        });
+    }
+    catch (error) {
+        console.log("Error in writer register controller:", error);
+        return res.status(500).json({ message: "Lỗi hệ thống" });
+    }
+}
+
+export const readerRegister = async (req, res) => {
+    try {
+        const { fullName, email, password } = req.body;
+        const result = await AuthService.readerRegisterService(fullName, email, password);
+        if (result.error) {
+            return res.status(401).json({
+                message: result.error
+            })
+        }
+        res.status(200).json({
+            ...result
+        });
+    }
+    catch (error) {
+        console.log("Error in reader register controller:", error);
+        return res.status(500).json({ message: "Lỗi hệ thống" });
+    }
+}
