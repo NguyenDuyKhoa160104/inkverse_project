@@ -10,7 +10,7 @@ const sampleWriters = [
         penName: "Nam Cao",
         email: "namcao@inkverse.com",
         password: "password123",
-        avatar_url: "https://api.dicebear.com/7.x/avataaars/svg?seed=NamCao",
+        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=NamCao",
         bio: "Tác giả chuyên sáng tác truyện ngắn hiện thực xã hội và tâm lý nhân vật.",
         revenueBalance: 1500000,
         isActive: WRITER_ISACTIVE.ACTIVE
@@ -19,7 +19,7 @@ const sampleWriters = [
         penName: "Xuân Diệu",
         email: "xuandieu@inkverse.com",
         password: "password123",
-        avatar_url: "https://api.dicebear.com/7.x/avataaars/svg?seed=XuanDieu",
+        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=XuanDieu",
         bio: "Nhà thơ, tác giả của những tác phẩm tình yêu nồng nàn và lãng mạn.",
         revenueBalance: 3200000,
         isActive: WRITER_ISACTIVE.ACTIVE
@@ -28,7 +28,7 @@ const sampleWriters = [
         penName: "Thạch Lam",
         email: "thachlam@inkverse.com",
         password: "password123",
-        avatar_url: "https://api.dicebear.com/7.x/avataaars/svg?seed=ThachLam",
+        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=ThachLam",
         bio: "Cây bút nhẹ nhàng, tinh tế và giàu cảm xúc đời thường.",
         revenueBalance: 0,
         isActive: WRITER_ISACTIVE.ACTIVE
@@ -37,7 +37,7 @@ const sampleWriters = [
         penName: "Tô Hoài",
         email: "tohoai@inkverse.com",
         password: "password123",
-        avatar_url: "https://api.dicebear.com/7.x/avataaars/svg?seed=ToHoai",
+        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=ToHoai",
         bio: "Tác giả văn học thiếu nhi, phiêu lưu và đồng thoại đặc sắc.",
         revenueBalance: 850000,
         isActive: WRITER_ISACTIVE.INACTIVE

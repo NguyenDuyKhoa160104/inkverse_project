@@ -19,7 +19,7 @@ const adminSchema = new mongoose.Schema({
         trim: true,
         example: [/\S+@\S+\.\S+/, "Email không hợp lệ"]
     },
-    avatar_url: {
+    avatarUrl: {
         type: String,
         trim: true
     },

@@ -10,7 +10,7 @@ const AdminSeeder = async () => {
         const password = process.env.ADMIN_PASSWORD;
         const email = process.env.ADMIN_EMAIL || "admin@inkverse.com";
         const phone = process.env.ADMIN_PHONE || "0123456789";
-        const avatar_url = process.env.ADMIN_AVATAR_URL || "https://example.com/avatar.png";
+        const avatarUrl = process.env.ADMIN_AVATAR_URL || "https://example.com/avatar.png";
 
         if (!username || !password) {
             console.error("Missing ADMIN_USERNAME or ADMIN_PASSWORD in .env");
@@ -30,7 +30,7 @@ const AdminSeeder = async () => {
             password,
             email,
             phone,
-            avatar_url
+            avatarUrl
         });
 
         await admin.save();

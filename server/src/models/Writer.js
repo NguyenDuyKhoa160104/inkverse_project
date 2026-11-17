@@ -17,7 +17,7 @@ const writerSchema = new mongoose.Schema({
         required: [true, "Mật khẩu là bắt buộc"],
         minlength: [6, "Mật khẩu phải có ít nhất 6 ký tự"]
     },
-    avatar_url: {
+    avatarUrl: {
         type: String,
         default: null
     },

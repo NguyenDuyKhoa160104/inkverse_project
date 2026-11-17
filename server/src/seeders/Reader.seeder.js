@@ -10,32 +10,32 @@ const sampleReaders = [
         fullName: "Nguyễn Văn An",
         email: "nguyenvanan@inkverse.com",
         password: "password123",
-        avatar_url: "https://api.dicebear.com/7.x/avataaars/svg?seed=An",
-        wallet_balance: 50000,
+        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=An",
+        walletBalance: 50000,
         isActive: READER_ISACTIVE.ACTIVE
     },
     {
         fullName: "Trần Thị Bình",
         email: "tranthibinh@inkverse.com",
         password: "password123",
-        avatar_url: "https://api.dicebear.com/7.x/avataaars/svg?seed=Binh",
-        wallet_balance: 100000,
+        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Binh",
+        walletBalance: 100000,
         isActive: READER_ISACTIVE.ACTIVE
     },
     {
         fullName: "Lê Hoàng Cường",
         email: "lehoangcuong@inkverse.com",
         password: "password123",
-        avatar_url: "https://api.dicebear.com/7.x/avataaars/svg?seed=Cuong",
-        wallet_balance: 0,
+        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Cuong",
+        walletBalance: 0,
         isActive: READER_ISACTIVE.ACTIVE
     },
     {
         fullName: "Phạm Minh Dung",
         email: "phamminhdung@inkverse.com",
         password: "password123",
-        avatar_url: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dung",
-        wallet_balance: 25000,
+        avatarUrl: "https://api.dicebear.com/7.x/avataaars/svg?seed=Dung",
+        walletBalance: 25000,
         isActive: READER_ISACTIVE.INACTIVE
     }
 ];

@@ -17,11 +17,11 @@ const readerSchema = new mongoose.Schema({
         required: [true, "Mật khẩu là bắt buộc"],
         minlength: [6, "Mật khẩu phải có ít nhất 6 ký tự"]  
     },
-    avatar_url: {
+    avatarUrl: {
         type: String,
         default: null
     },
-    wallet_balance: {
+    walletBalance: {
         type: Number,
         default: 0
     },
@@ -30,11 +30,11 @@ const readerSchema = new mongoose.Schema({
         enum: [READER_ISACTIVE.INACTIVE, READER_ISACTIVE.ACTIVE, READER_ISACTIVE.BANNED],
         default: READER_ISACTIVE.ACTIVE
     },
-    ban_reason: {
+    banReason: {
         type: String,
         default: null
     },
-    ban_until: {
+    banUntil: {
         type: Date,
         default: null
     }
@@ -50,4 +50,3 @@ readerSchema.methods.comparePassword = function (password) {
 }
 
 export default mongoose.model('Reader', readerSchema);
-    

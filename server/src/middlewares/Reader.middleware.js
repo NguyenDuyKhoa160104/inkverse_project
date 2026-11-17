@@ -88,11 +88,11 @@ export const isReaderActive = async (req, res, next) => {
 
         if (reader.isActive !== READER_ISACTIVE.ACTIVE) {
             let message = "Tài khoản của bạn đã bị khóa hoặc ngừng hoạt động.";
-            if (reader.ban_reason) {
-                message += ` Lý do: ${reader.ban_reason}`;
+            if (reader.banReason) {
+                message += ` Lý do: ${reader.banReason}`;
             }
-            if (reader.ban_until) {
-                message += ` đến ngày ${new Date(reader.ban_until).toLocaleDateString("vi-VN")}`;
+            if (reader.banUntil) {
+                message += ` đến ngày ${new Date(reader.banUntil).toLocaleDateString("vi-VN")}`;
             }
             return res.status(403).json({
                 message
